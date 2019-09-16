@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style type="text/css">
+
+#bold1, #bold2{
+	font-weight: bold;
+}
+
+p{
+	font-size: 18pt;
+}
+
+</style>
+
+
+<script>
+const log = console.log;
+
+jQuery(function () { 
+
+	$("#capital").hide();
+	$("#treasure").hide();
+	
+	$("#answer1").click( function () {
+		$("#capital").show();
+	})
+	
+	$("#answer2").click( function () {
+		$("#treasure").show();
+	})
+	
+});
+
+</script>
+
+</head>
+<body>
+
+<h1> 질문 : 대한민국의 수도는 어디입니까? </h1>
+<br>
+<h2 id="answer1"> [정답 보기]</h2>
+<br>
+<p id="capital">대한민국의 수도는 <span id="bold1">서울</span>입니다.</p>
+<br>
+<br>
+
+<h1> 질문 : 대한민국의 국보1호는 무엇입니까? </h1>
+<br>
+<h2 id="answer2"> [정답 보기]</h2>
+<br>
+<p id="treasure">대한민국의 국보1호는 <span id="bold2">숭례문</span>입니다.</p>
+
+</body>
+</html>

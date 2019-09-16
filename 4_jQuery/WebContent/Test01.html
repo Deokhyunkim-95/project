@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>jQuery Test</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+
+</script>
+
+</head>
+<body>
+
+<h1>jQuery Test</h1>
+
+<h2>클릭하면 사라집니다~! 1</h2>
+<h2 id="h2_2">클릭하면 사라집니다~! 2</h2>
+<h2>클릭하면 사라집니다~! 3</h2>
+<h2>클릭하면 사라집니다~! 4</h2>
+<h2>클릭하면 사라집니다~! 5</h2>
+	
+
+<script>
+let log = console.log;
+
+//ver1) JavaScript 방식
+//window.onload =  function () { alert("~~~");}
+
+//ver2) jQuery 방식
+//$(document).ready( function () { alert("~~~");});
+   // => [ $ = jQuery]
+
+//ver3) 우린 이렇게 할거다!!
+//$(()=>{ });
+//$(function () { });
+
+$(function () { 
+	
+	// Call-back 함수
+	// : 함수 안에서 함수를 호출
+	//   -> JavaScript의 특징
+	
+	$("#h2_2").click( function () {
+		//나를 감춰줘,,	
+		// [ .hide() ]
+		// : CSS의  "display: none;" 으로 바꿔줌! 
+		$(this).hide();
+	});
+});   
+
+
+</script>
+
+</body>
+</html>

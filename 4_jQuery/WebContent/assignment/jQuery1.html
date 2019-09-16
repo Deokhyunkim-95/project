@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>Insert title here</title>
+
+<style type="text/css">
+
+#announcement{
+ background-color: #99cc99;
+ width: 100%;
+ hegiht: 40px;
+ text-align: center;
+ border: 1px solid gray;
+}
+
+#toggle{
+ background-color: #99cc99;
+ width: 100%;
+ hegiht: 40px;
+ text-align: center;
+ border: 1px solid gray;
+}
+
+#intro{
+background-color: #ffff99;
+width: 100%;
+height: 200px;
+text-align: center;
+border: 1px solid gray;
+display: block;
+
+}
+
+span{
+ position: relative;
+ top: 40%;
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+const log = console.log;
+
+jQuery(function () { 
+
+	$("#intro").hide();
+	
+	$("#announcement").click( function() {
+		$("#intro").slideToggle(7000)
+	})
+
+	
+	$("#toggle").click( function() {
+		$("#intro").slideUp(7000)
+	})
+	
+	$("#btn").click( function () {
+		$("#intro").stop()
+	})
+	
+});
+
+</script>
+
+</head>
+<body>
+
+<div id="announcement">[오늘의 공지사항]</div>
+
+<div id="intro">
+<span>
+오늘은 jQuery 프로그램을 학습합니다. <br>
+예제를 작성한 후 실행해보세요.
+</span>
+</div>
+
+<div id="toggle">Toggle slide</div>
+<br>
+
+<button id="btn">Stop sliding</button>
+
+
+
+
+</body>
+</html>

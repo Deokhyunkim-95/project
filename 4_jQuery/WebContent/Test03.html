@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>jQuery 이벤트 등록 방법</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+const log = console.log;
+
+//$(()=>{alert("~~~~")});
+// -> 이것도 된다
+
+jQuery(function () { 
+	
+	$("#show").click( function () {
+		$("h2").show();
+	})
+	
+	//ver1) click event 사용
+	/* 
+	$("#hide").click( function () {
+		$("h2").hide();
+	})
+	*/
+	
+	//ver2) bind 사용
+	$("#hide").bind("click", function () {
+		$("h2").hide();
+	});
+	
+		
+	$("#msg").on( { //JavaScrip 객체 (여러개의 event 붙일 수 있음)
+		focus:function (){
+			$(this).css('background-color', 'yellow');
+					//jQuery에서도 css처럼 배경색 'background-color'로 지정하는데, JavaScript는 'backgroundColor'로 지정함
+			
+		},
+		blur:function (){
+			$(this).css('background-color', 'blue');
+			
+		}
+
+	}
+	);
+	
+	
+});
+
+</script>
+
+</head>
+<body>
+
+<h2>jQuery 이벤트 등록 방법</h2>
+
+<button id="show"> show</button>
+<button id="hide"> hide</button>
+
+<br><br>
+
+MSG : <input type="text" name="msg" id="msg">
+
+
+</body>
+</html>

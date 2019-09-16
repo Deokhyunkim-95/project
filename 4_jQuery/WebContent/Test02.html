@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title> Register</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style type="text/css">
+
+.error{
+	color: red;
+}
+
+</style>
+
+<script>
+const log = console.log;
+
+jQuery(function () { 
+	// [ .keyup event ]
+	// : keyboard가 눌러지자마자 처리가 됨
+	$('input[name="id"]').keyup(function () {
+		//jQuery에서는 value아니고 val
+		let id = $(this).val();
+		if(id.length < 5) {
+			$("#sid").text("id는 5글자 이상 입력해 주세요.");
+		}else{
+			$("#sid").text("사용 가능한 ID 입니다.")			
+		}
+	});
+	
+	// [ .blur event ]
+	// : 빠져 나와야 처리가 됨
+	//$('input[name="name"]').blur(function () {
+		
+		
+	// [ .focus event ]
+	// : focus가 가자마자 처리가 됨
+	$('input[name="name"]').focus(function () {
+		
+		let name = $(this).val();
+		if(name.length < 5) {
+			$("#sname").text("name은 5글자 이상 입력해 주세요.");
+		}else{
+			$("#sname").text("사용 가능한 ID 입니다.")			
+		}
+	});
+
+	$('input[type="button"]').click(function () {
+		// [attr() -> 속성을 지정하겠다]
+		$("#f1").attr('method','GET');
+		$("#f1").attr('action','process.jsp');
+		$("#f1").submit();
+	});
+});
+
+</script>
+
+</head>
+<body>
+
+<h3> Register</h3>
+
+<form id="f1">
+	ID : <input type="text" name="id" id="id">
+			<span id="sid" class="error"></span> <br>
+	Name : <input type="text" name="name" id="name">
+			<span id="sname" class="errror"></span> <br>
+			
+	<input type="button" value="Register" id="btn1">
+	<input type="reset">  
+</form>
+
+
+</body>
+</html>
