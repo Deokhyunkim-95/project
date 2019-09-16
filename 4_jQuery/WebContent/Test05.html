@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+const log = console.log;
+
+jQuery(function () { 
+	
+	//$()에 css tag(id, class..etc)를 넣으면 선택을 하고,
+	//$()에 tag를 넣으면 생성함
+	$("<h1></h1>").text("hello jQuery")
+	.css( { //여러개의 attribute는 {} (JavaScript 객체)로 만들어라
+		color: "green",
+		backgroundColor: "gray"
+	})
+	.appendTo("body"); //-> body tag에 붙여라~~
+	$("<h2></h2>").text("sample test").appendTo("body"); 
+	$("<h3></h3>").text("yay").appendTo("body"); 
+	
+	$("<ul></ul>").appendTo("body");
+	$("<li> <a href='./Test01.html'> Link </	a> </li>").appendTo("ul")
+});
+
+</script>
+
+</head>
+<body>
+
+
+
+
+</body>
+</html>

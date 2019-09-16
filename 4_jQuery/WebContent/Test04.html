@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>jQuery img</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+const log = console.log;
+
+jQuery(function () { 
+	
+	
+//	$("img").each(index,item) => {} 이렇게 람다로 했을 때에는 $(this)안 먹음!
+	
+	//기존에 있는 img tag에 접근해서 attribute를 변경함
+	$("img").each (function(index,item) {
+		//-> 배열이라서 each가 가능
+		
+		//index랑 item 뭔지 확인
+//		log(index);
+//		log(item);
+		$(this).attr("src","./img/s"+index+".jpg");
+		$(this).attr("width", "100");
+		$(this).attr("height","100");
+	});	
+});
+
+</script>
+
+</head>
+<body>
+
+<h3>jQuery img</h3>
+
+<img />
+<img />
+<img />
+<img />
+<img />
+
+
+
+</body>
+</html>
