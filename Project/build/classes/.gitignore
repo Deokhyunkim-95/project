@@ -1,6 +1,9 @@
 /dao/
 /json_jdbc/
 /service/
+<<<<<<< HEAD
 /sql/
+=======
+>>>>>>> branch 'master' of https://github.com/Deokhyunkim-95/project.git
 /util/
 /vo/
