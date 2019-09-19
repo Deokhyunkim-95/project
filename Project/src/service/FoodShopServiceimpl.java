@@ -1,13 +1,34 @@
 package service;
 
+import dao.FoodshopDao;
 import vo.FoodshopVO;
 
 public class FoodShopServiceimpl implements FoodShopService {
+	
+	FoodshopDao dao;
+	
+	public FoodShopServiceimpl() {}
+
+
+	public FoodShopServiceimpl(FoodshopDao dao) {
+		this.dao = dao;
+	}
+	
+	
+	public FoodshopDao getDao() {
+		return dao;
+	}
+
+
+	public void setDao(FoodshopDao dao) {
+		this.dao = dao;
+	}
+
 
 	@Override
-	public int insertFoodshop(FoodshopVO vo) {
+	public int addFoodshop(FoodshopVO vo) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.insertFoodshop(vo);
 	}
 
 	@Override

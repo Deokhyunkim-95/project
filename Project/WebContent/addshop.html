@@ -7,13 +7,13 @@
 <script src="./js/addshop.js"></script>
 
 <title>음식점 추가</title>
+
 <style type="text/css">
 #table {
 	width: 400px;
 	text-align: center;
 	margin: 0 auto;
 }
-
 </style>
 
 </head>
@@ -22,21 +22,21 @@
 	<form id="addshop" action="regshop.jsp" method="get">
 		<table id="table" border="1">
 			<tr>
-				<td><label for="fname">이름</label></td>
-				<td><input type="text" id="fname" value="가게 이름을 입력해주세요"
-					style="text-align: center; width: 250px;"
-					onblur="checkField(this)" onfocus="clearField(this)"></td>
+				<td><label>이름</label></td>
+				<td><input type="text" id="fname" name="fname" value="가게 이름을 입력해주세요"
+					style="text-align: center; width: 250px;" onblur="checkField(this)"
+					onfocus="clearField(this)"></td>
 			</tr>
 			<tr>
-				<td><label for="address">주소</label></td>
-				<td><input type="text" id="fname" value="주소를 입력해주세요"
-					style="text-align: center; width: 250px;"
-					onblur="checkField(this)" onfocus="clearField(this)"></td>
+				<td><label>주소</label></td>
+				<td><input type="text" id="address" name="address" value="주소를 입력해주세요"
+					style="text-align: center; width: 250px;" onblur="checkField(this)"
+					onfocus="clearField(this)"></td>
 			</tr>
 			<tr>
-				<td><label for="foodstyle">음식스타일</label></td>
-				<td><select name="foodstyle1" align="center" space="&nbsp" style="width: 250px;">
-						<option value="" style="text-align: center; width: 250px;">스타일선택</option>
+				<td><label>음식스타일</label></td>
+				<td><select name="foodstyle" id="foodstyle" style="width: 250px; height: 23px">
+						<option value="">스타일선택</option>
 						<option value="한국">한국</option>
 						<option value="일식">일식</option>
 						<option value="중식">중식</option>
@@ -53,28 +53,32 @@
 				</select></td>
 			</tr>
 			<tr>
-				<td><label for="image">이미지</label></td>
-				<td></td>
+				<td><label>이미지</label></td>
+				<td><input type="text" id="image" name="image" value="이미지 경로"
+					style="text-align: center; width: 250px;" onblur="checkField(this)"
+					onfocus="clearField(this)"></td>
 			</tr>
 			<tr>
-				<td><label for="image_menu">이미지1</label></td>
-				<td></td>
+				<td><label>이미지1</label></td>
+				<td><input type="text" id="image_menu" name="image_menu" value="이미지 경로1"
+					style="text-align: center; width: 250px;" onblur="checkField(this)"
+					onfocus="clearField(this)"></td>
 			</tr>
 			<tr>
-				<td><label for="loc">위치한 지역</label></td>
-				<td><select name="selOne" id="selOne"
-					onchange="doChange(this, 'selTwo')">
+				<td><label>위치한 지역</label></td>
+				<td><select name="loc1" id="loc1"
+					onchange="doChange(this, 'loc2')">
 						<option value="default">지역선택</option>
 						<option value="강남">강남</option>
 						<option value="강북">강북</option>
-				</select> <select name="selTwo" id="selTwo">
+				</select> <select name="loc2" id="loc2">
 						<option value="default">도시선택</option>
 				</select></td>
 			</tr>
 			<tr>
-				<td><label for="discount">할인</label></td>
-				<td><select name="discount1">
-						<option value="">할인선택</option>
+				<td><label>할인</label></td>
+				<td><select name="discount" id = "discount">
+						<option value="선택x">할인선택</option>
 						<option value="0">0</option>
 						<option value="10">10</option>
 						<option value="15">15</option>
@@ -84,9 +88,9 @@
 				</select></td>
 			</tr>
 			<tr>
-				<td><label for="holiday">휴일</label></td>
-				<td><select name="discount1">
-						<option value="">휴일선택</option>
+				<td><label>휴일</label></td>
+				<td><select name="holiday" id = "holiday">
+						<option value="선택x">휴일선택</option>
 						<option value="월요일">월요일</option>
 						<option value="화요일">화요일</option>
 						<option value="수요일">수요일</option>
@@ -97,21 +101,21 @@
 				</select></td>
 			</tr>
 			<tr>
-				<td><label for="octime">운영시간</label></td>
-				<td><input type="text" id="octime"
+				<td><label>운영시간</label></td>
+				<td><input type="text" id="octime" name="octime"
 					style="text-align: center; width: 250px;"
 					value="00~00형식으로 운영시간을 입력해주세요" onblur="checkField(this)"
 					onfocus="clearField(this)"></td>
 			</tr>
 			<tr>
-				<td><label for="tel">전화번호</label></td>
-				<td><input type="text" id="tel"
+				<td><label>전화번호</label></td>
+				<td><input type="text" id="tel" name="tel"
 					style="text-align: center; width: 250px;"
 					value="입력이 가능한 번호를 입력해주세요" onblur="checkField(this)"
 					onfocus="clearField(this)"></td>
 			</tr>
 			<tr>
-				<td id="button" colspan="2"><input type="submit" value="로그인">
+				<td id="button" colspan="2"><input type="submit" value="추가">
 					<input type="reset" id="reset" value="취소"></td>
 			</tr>
 		</table>

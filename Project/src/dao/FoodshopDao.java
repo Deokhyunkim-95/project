@@ -2,10 +2,6 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
-
 import util.JDBCUtil;
 import vo.FoodshopVO;
 
@@ -13,8 +9,8 @@ public class FoodshopDao {
 	
 	public int insertFoodshop(FoodshopVO vo) {
 
-		String sql = "INSERT INTO foodshop(fid, fname , address, foodstyle, image, image_menu, loc, discount, holiday, octime, tel) "
-				+ " VALUES(?,?,?,?,?,?,?,?,?,?,?) ";
+		String sql = " INSERT INTO foodshop(fid, fname , address, foodstyle, image, image_menu, loc, discount, holiday, octime, tel) "
+				+ " VALUES((select nvl(max(fid),0)+1 from foodshop),?,?,?,?,?,?,?,?,?,?) ";
 		
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -25,17 +21,16 @@ public class FoodshopDao {
 			ps = con.prepareStatement(sql);
 
 			//? 세팅
-			ps.setInt(1, vo.getFid());
-			ps.setString(2, vo.getFname());
-			ps.setString(3, vo.getAddress());
-			ps.setString(4, vo.getFoodstyle());
-			ps.setString(5, vo.getImage());
-			ps.setString(6, vo.getImage_menu());
-			ps.setString(7, vo.getLoc());
-			ps.setInt(8, vo.getDiscount());
-			ps.setString(9, vo.getHoliday());
-			ps.setString(10, vo.getOctime());
-			ps.setString(11, vo.getTel());
+			ps.setString(1, vo.getFname());
+			ps.setString(2, vo.getAddress());
+			ps.setString(3, vo.getFoodstyle());
+			ps.setString(4, vo.getImage());
+			ps.setString(5, vo.getImage_menu());
+			ps.setString(6, vo.getLoc());
+			ps.setInt(7, vo.getDiscount());
+			ps.setString(8, vo.getHoliday());
+			ps.setString(9, vo.getOctime());
+			ps.setString(10, vo.getTel());
 
 			
 			//실행 및 결과값 핸들링

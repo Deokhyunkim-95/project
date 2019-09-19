@@ -19,7 +19,6 @@ public class FoodshopVO {
 	
 	public FoodshopVO(int fid, String fname, String address, String foodstyle, String image, String image_menu,
 			String loc, int discount, String holiday, String octime, String tel) {
-		super();
 		this.fid = fid;
 		this.fname = fname;
 		this.address = address;
