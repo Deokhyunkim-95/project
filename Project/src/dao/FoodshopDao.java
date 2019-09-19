@@ -9,8 +9,13 @@ public class FoodshopDao {
 	
 	public int insertFoodshop(FoodshopVO vo) {
 
-		String sql = " INSERT INTO foodshop(fid, fname , address, foodstyle, image, image_menu, loc, discount, holiday, octime, tel) "
-				+ " VALUES((select nvl(max(fid),0)+1 from foodshop),?,?,?,?,?,?,?,?,?,?) ";
+		String sql = " INSERT INTO foodshop(fid, fname , address, latitude, longitude, foodstyle, image, image_menu, loc, discount, holiday, octime, tel) "
+				+ " VALUES((select nvl(max(fid),0)+1 from foodshop),?,?,?,?,?,?,?,?,?,?,?,?) ";
+		
+		//String sql = " INSERT INTO foodshop(fid, fname , address, foodstyle, image, image_menu, loc, discount, holiday, octime, tel) "
+		//		+ " VALUES(10,'DEOK HYUN','경기도 용인시 수지구 죽전동 현대홈타운 441동 301호','한국',123,123,'가로수길',10,'월요일','10-24',01025997258) ";
+	
+		
 		
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -23,19 +28,23 @@ public class FoodshopDao {
 			//? 세팅
 			ps.setString(1, vo.getFname());
 			ps.setString(2, vo.getAddress());
-			ps.setString(3, vo.getFoodstyle());
-			ps.setString(4, vo.getImage());
-			ps.setString(5, vo.getImage_menu());
-			ps.setString(6, vo.getLoc());
-			ps.setInt(7, vo.getDiscount());
-			ps.setString(8, vo.getHoliday());
-			ps.setString(9, vo.getOctime());
-			ps.setString(10, vo.getTel());
+			ps.setString(3, vo.getLatitude());
+			ps.setString(4, vo.getLongitude());
+			ps.setString(5, vo.getFoodstyle());
+			ps.setString(6, vo.getImage());
+			ps.setString(7, vo.getImage_menu());
+			ps.setString(8, vo.getLoc());
+			ps.setInt(9, vo.getDiscount());
+			ps.setString(10, vo.getHoliday());
+			ps.setString(11, vo.getOctime());
+			ps.setString(12, vo.getTel());
 
-			
+			System.out.println("ps "+ps);
+			System.out.println("vo "+vo);
+			System.out.println("sql  : "+sql);
 			//실행 및 결과값 핸들링
 			result = ps.executeUpdate();
-			
+			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

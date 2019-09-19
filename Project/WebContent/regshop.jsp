@@ -1,10 +1,10 @@
-<%@page import="com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory.Default"%>
+<%-- <%@page import="com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory.Default"%>
 <%@page import="vo.FoodshopVO"%>
 <%@page import="service.FoodShopServiceimpl"%>
 <%@page import="service.FoodShopService"%>
 <%@page import="dao.FoodshopDao"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,11 +12,13 @@
 <title>regshop.jsp</title>
 </head>
 <body>
-	<h3>ю╫ ╫д а║ ╣Н ╥о</h3>
+	<h3>Л²▄ Л▀² Л═░ К⌠╠ К║²</h3>
 
 	<%
 		String fname = request.getParameter("fname");
 		String address = request.getParameter("address");
+		String latitude = request.getParameter("latitude");
+		String longitude = request.getParameter("longitude");
 		String foodstyle = request.getParameter("foodstyle");
 		String image = request.getParameter("image");
 		String image_menu = request.getParameter("image_menu");
@@ -28,14 +30,14 @@
 		
 		
 		
-		if(discount.equals("╪╠ецx")){
+		if(discount.equals("Л└═М┐²x")){
 			discount = "0";
 		}
 		
 		int discount1 = Integer.parseInt(discount);
 		
-		if(holiday.equals("╪╠ецx")){
-			holiday="©╛аъ╧╚хч";
+		if(holiday.equals("Л└═М┐²x")){
+			holiday="Л≈╟Л╓▒К╛╢М°╢";
 		}
 		
 		FoodshopDao dao = new FoodshopDao();
@@ -44,6 +46,8 @@
 
 		vo.setFname(fname);
 		vo.setAddress(address);
+		vo.setLatitude(latitude);
+		vo.setLongitude(longitude);
 		vo.setFoodstyle(foodstyle);
 		vo.setImage(image);
 		vo.setImage_menu(image_menu);
@@ -52,11 +56,11 @@
 		vo.setHoliday(holiday);
 		vo.setOctime(octime);
 		vo.setTel(tel);
-		
+		System.out.println(vo);
 		int c = service.addFoodshop(vo); 
 		
 	%>
-	ют╥ба╓╨╦ :
+	Л·┘К═╔Л═∙КЁ╢ :
 	<%=fname%>/<%=address%>/<%=foodstyle%>/<%=image%>/<%=image_menu%>/<%=loc%>/<%=discount1%>/<%=holiday%>/<%=octime%>/<%=tel%>
 	<%=vo.toString() %>
 
@@ -64,17 +68,17 @@
 	<%
 		if (c == 0) {
 	%>
-	<h4>ю╫╫да║ ╣Н╥о ╫гфп</h4>
+	<h4>Л²▄Л▀²Л═░ К⌠╠К║² Л▀╓М▄╗</h4>
 	<%
 		} else {
 	%>
-	ю╫╫да║ ╣Н╥о ╪╨╟Ь
+	Л²▄Л▀²Л═░ К⌠╠К║² Л└╠ЙЁ╣
 	<%
 		}
 	%>
 	<p>
-		<a href=" main.html">homeю╦╥н</a>
+		<a href=" main.html">homeЛ°╪К║°</a>
 	</p>
 
 </body>
-</html>
+</html> --%>

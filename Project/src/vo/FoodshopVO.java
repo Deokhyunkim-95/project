@@ -5,6 +5,8 @@ public class FoodshopVO {
 	int fid;
 	String fname;
 	String address;
+	String latitude;
+	String longitude;
 	String foodstyle;
 	String image;
 	String image_menu;
@@ -15,13 +17,16 @@ public class FoodshopVO {
 	String tel;
 	
 	
-	public FoodshopVO() {	}
 	
-	public FoodshopVO(int fid, String fname, String address, String foodstyle, String image, String image_menu,
-			String loc, int discount, String holiday, String octime, String tel) {
+	public FoodshopVO() {}
+	public FoodshopVO(int fid, String fname, String address, String latitude, String logitude, String foodstyle,
+			String image, String image_menu, String loc, int discount, String holiday, String octime, String tel) {
+		super();
 		this.fid = fid;
 		this.fname = fname;
 		this.address = address;
+		this.latitude = latitude;
+		this.longitude = logitude;
 		this.foodstyle = foodstyle;
 		this.image = image;
 		this.image_menu = image_menu;
@@ -31,97 +36,83 @@ public class FoodshopVO {
 		this.octime = octime;
 		this.tel = tel;
 	}
-	
 	public int getFid() {
 		return fid;
 	}
-	
 	public void setFid(int fid) {
 		this.fid = fid;
 	}
-	
 	public String getFname() {
 		return fname;
 	}
-	
 	public void setFname(String fname) {
 		this.fname = fname;
 	}
-	
 	public String getAddress() {
 		return address;
 	}
-	
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public String getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+	public String getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(String logitude) {
+		this.longitude = logitude;
 	}
 	public String getFoodstyle() {
 		return foodstyle;
 	}
-	
 	public void setFoodstyle(String foodstyle) {
 		this.foodstyle = foodstyle;
 	}
-	
 	public String getImage() {
 		return image;
 	}
-	
 	public void setImage(String image) {
 		this.image = image;
 	}
-	
 	public String getImage_menu() {
 		return image_menu;
 	}
-	
 	public void setImage_menu(String image_menu) {
 		this.image_menu = image_menu;
 	}
-	
 	public String getLoc() {
 		return loc;
 	}
-	
 	public void setLoc(String loc) {
 		this.loc = loc;
 	}
-	
 	public int getDiscount() {
 		return discount;
 	}
-	
 	public void setDiscount(int discount) {
 		this.discount = discount;
 	}
-	
 	public String getHoliday() {
 		return holiday;
 	}
-	
 	public void setHoliday(String holiday) {
 		this.holiday = holiday;
 	}
-	
 	public String getOctime() {
 		return octime;
-	}	
+	}
 	public void setOctime(String octime) {
 		this.octime = octime;
 	}
-	
 	public String getTel() {
 		return tel;
 	}
-	
 	public void setTel(String tel) {
 		this.tel = tel;
-	}
-	@Override
-	public String toString() {
-		return "FoodshopVO [fid=" + fid + ", fname=" + fname + ", address=" + address + ", foodstyle=" + foodstyle
-				+ ", image=" + image + ", image_menu=" + image_menu + ", loc=" + loc + ", discount=" + discount
-				+ ", holiday=" + holiday + ", octime=" + octime + ", tel=" + tel + "]";
 	}
 	@Override
 	public int hashCode() {
@@ -135,12 +126,13 @@ public class FoodshopVO {
 		result = prime * result + ((holiday == null) ? 0 : holiday.hashCode());
 		result = prime * result + ((image == null) ? 0 : image.hashCode());
 		result = prime * result + ((image_menu == null) ? 0 : image_menu.hashCode());
+		result = prime * result + ((latitude == null) ? 0 : latitude.hashCode());
 		result = prime * result + ((loc == null) ? 0 : loc.hashCode());
+		result = prime * result + ((longitude == null) ? 0 : longitude.hashCode());
 		result = prime * result + ((octime == null) ? 0 : octime.hashCode());
 		result = prime * result + ((tel == null) ? 0 : tel.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -184,10 +176,20 @@ public class FoodshopVO {
 				return false;
 		} else if (!image_menu.equals(other.image_menu))
 			return false;
+		if (latitude == null) {
+			if (other.latitude != null)
+				return false;
+		} else if (!latitude.equals(other.latitude))
+			return false;
 		if (loc == null) {
 			if (other.loc != null)
 				return false;
 		} else if (!loc.equals(other.loc))
+			return false;
+		if (longitude == null) {
+			if (other.longitude != null)
+				return false;
+		} else if (!longitude.equals(other.longitude))
 			return false;
 		if (octime == null) {
 			if (other.octime != null)
@@ -201,5 +203,15 @@ public class FoodshopVO {
 			return false;
 		return true;
 	}
+	@Override
+	public String toString() {
+		return "FoodshopVO [fid=" + fid + ", fname=" + fname + ", address=" + address + ", latitude=" + latitude
+				+ ", logitude=" + longitude + ", foodstyle=" + foodstyle + ", image=" + image + ", image_menu="
+				+ image_menu + ", loc=" + loc + ", discount=" + discount + ", holiday=" + holiday + ", octime=" + octime
+				+ ", tel=" + tel + "]";
+	}
+	
+	
+	
 	
 }
