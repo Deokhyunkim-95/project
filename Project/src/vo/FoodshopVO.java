@@ -9,27 +9,23 @@ public class FoodshopVO {
 	String longitude;
 	String foodstyle;
 	String image;
-	String image_menu;
 	String loc;
 	int discount;
 	String holiday;
 	String octime;
 	String tel;
 	
+	public FoodshopVO() {	}
 	
-	
-	public FoodshopVO() {}
-	public FoodshopVO(int fid, String fname, String address, String latitude, String logitude, String foodstyle,
-			String image, String image_menu, String loc, int discount, String holiday, String octime, String tel) {
-		super();
+	public FoodshopVO(int fid, String fname, String address, String latitude, String longitude, String foodstyle,
+			String image, String loc, int discount, String holiday, String octime, String tel) {
 		this.fid = fid;
 		this.fname = fname;
 		this.address = address;
 		this.latitude = latitude;
-		this.longitude = logitude;
+		this.longitude = longitude;
 		this.foodstyle = foodstyle;
 		this.image = image;
-		this.image_menu = image_menu;
 		this.loc = loc;
 		this.discount = discount;
 		this.holiday = holiday;
@@ -63,8 +59,8 @@ public class FoodshopVO {
 	public String getLongitude() {
 		return longitude;
 	}
-	public void setLongitude(String logitude) {
-		this.longitude = logitude;
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
 	}
 	public String getFoodstyle() {
 		return foodstyle;
@@ -77,12 +73,6 @@ public class FoodshopVO {
 	}
 	public void setImage(String image) {
 		this.image = image;
-	}
-	public String getImage_menu() {
-		return image_menu;
-	}
-	public void setImage_menu(String image_menu) {
-		this.image_menu = image_menu;
 	}
 	public String getLoc() {
 		return loc;
@@ -114,6 +104,14 @@ public class FoodshopVO {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
+
+	@Override
+	public String toString() {
+		return "FoodshopVO [fid=" + fid + ", fname=" + fname + ", address=" + address + ", latitude=" + latitude
+				+ ", longitude=" + longitude + ", foodstyle=" + foodstyle + ", image=" + image + ", loc=" + loc
+				+ ", discount=" + discount + ", holiday=" + holiday + ", octime=" + octime + ", tel=" + tel + "]";
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -125,7 +123,6 @@ public class FoodshopVO {
 		result = prime * result + ((foodstyle == null) ? 0 : foodstyle.hashCode());
 		result = prime * result + ((holiday == null) ? 0 : holiday.hashCode());
 		result = prime * result + ((image == null) ? 0 : image.hashCode());
-		result = prime * result + ((image_menu == null) ? 0 : image_menu.hashCode());
 		result = prime * result + ((latitude == null) ? 0 : latitude.hashCode());
 		result = prime * result + ((loc == null) ? 0 : loc.hashCode());
 		result = prime * result + ((longitude == null) ? 0 : longitude.hashCode());
@@ -133,6 +130,7 @@ public class FoodshopVO {
 		result = prime * result + ((tel == null) ? 0 : tel.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -171,11 +169,6 @@ public class FoodshopVO {
 				return false;
 		} else if (!image.equals(other.image))
 			return false;
-		if (image_menu == null) {
-			if (other.image_menu != null)
-				return false;
-		} else if (!image_menu.equals(other.image_menu))
-			return false;
 		if (latitude == null) {
 			if (other.latitude != null)
 				return false;
@@ -203,13 +196,8 @@ public class FoodshopVO {
 			return false;
 		return true;
 	}
-	@Override
-	public String toString() {
-		return "FoodshopVO [fid=" + fid + ", fname=" + fname + ", address=" + address + ", latitude=" + latitude
-				+ ", logitude=" + longitude + ", foodstyle=" + foodstyle + ", image=" + image + ", image_menu="
-				+ image_menu + ", loc=" + loc + ", discount=" + discount + ", holiday=" + holiday + ", octime=" + octime
-				+ ", tel=" + tel + "]";
-	}
+	
+	
 	
 	
 	

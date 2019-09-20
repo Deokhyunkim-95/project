@@ -28,7 +28,7 @@ public class FoodShopServiceimpl implements FoodShopService {
 	@Override
 	public int addFoodshop(FoodshopVO vo) {
 		// TODO Auto-generated method stub
-		System.out.println("FoodShopServiceimpl  addFoodshop");
+//		System.out.println("FoodShopServiceimpl  addFoodshop");
 		return dao.insertFoodshop(vo);
 	}
 

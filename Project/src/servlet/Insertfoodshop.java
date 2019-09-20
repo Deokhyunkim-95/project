@@ -45,13 +45,26 @@ public class Insertfoodshop extends HttpServlet {
         vo.setLatitude(request.getParameter("latitude"));
         vo.setLongitude(request.getParameter("longitude"));
         vo.setFoodstyle(request.getParameter("foodstyle"));
-        vo.setImage(request.getParameter("image"));
-        vo.setImage_menu(request.getParameter("image_menu"));
-        vo.setLoc(request.getParameter("loc"));
+        
+        String path = request.getRealPath("/upload/");
+        Collection<Part> parts = request.getParts();
+        for(Part p :parts) {
+        	if(p.getContentType()!=null) {
+        		String filename = p.getSubmittedFileName();
+        		if(filename != null && filename.length() != 0) {
+        			p.write(path+filename);
+        			vo.setImage("./upload/"+filename);
+        			System.out.println(vo);
+        		}
+        	}
+        }
+        vo.setLoc(request.getParameter("loc2"));
         vo.setDiscount(Integer.parseInt(request.getParameter("discount")));
         vo.setHoliday(request.getParameter("holiday"));
         vo.setOctime(request.getParameter("octime"));
         vo.setTel(request.getParameter("tel"));
+        
+       
         
         try {
         	service.addFoodshop(vo);

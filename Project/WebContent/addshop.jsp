@@ -21,7 +21,7 @@
 </head>
 <body>
 	<h3>음식점 추가</h3>
-	<form id="addshop" action="insertfoodshop.do" method="get">
+	<form id="addshop" action="insertfoodshop.do" method="post" enctype="multipart/form-data">
 		<table id="table" border="1">
 			<tr>
 				<td><label>이름</label></td>
@@ -69,12 +69,6 @@
 			<tr>
 				<td><label>이미지</label></td>
 				<td><input type="file" name="img" multiple="multiple" ></td>
-			</tr>
-			<tr>
-				<td><label>이미지1</label></td>
-				<td><input type="text" id="image_menu" name="image_menu" value="이미지 경로1"
-					style="text-align: center; width: 250px;" onblur="checkField(this)"
-					onfocus="clearField(this)"></td>
 			</tr>
 			<tr>
 				<td><label>위치한 지역</label></td>
