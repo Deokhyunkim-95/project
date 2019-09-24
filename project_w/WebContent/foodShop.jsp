@@ -128,7 +128,7 @@
 							<!--지도-->
 		<div id="map" style="width:800px;height:700px;" class="map_layer"></div>
 <script  type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cf7b76e3a2c369d74d6fed8c89980981"></script>
-<c:foreach var="data" items="${showFoodShop}">						
+<%--<c:foreach var="data" items="${showFoodShop}">						
 		<script>
 		var container = document.getElementById('map');
 		var options = { //지도를 생성할 때 필요한 기본 옵션
@@ -137,7 +137,7 @@
 			};
 		var map = new kakao.maps.Map(container, options); 		
 		</script>
-</c:foreach>
+</c:foreach> --%>
 							</div>
 						</div>
 			</section>

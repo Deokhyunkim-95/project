@@ -14,7 +14,7 @@ import service.FoodShopService;
 import service.FoodShopServiceimpl;
 import vo.FoodshopVO;
 
-@WebServlet("/showFoodShop")
+@WebServlet("/showFoodShop.do")
 public class showFoodShopServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -25,10 +25,10 @@ public class showFoodShopServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		
 		System.out.println("/showFoodShop.do");
-		
+		String fname = "대낚식당";
 		FoodshopDao dao = new FoodshopDao();
 		FoodShopService service = new FoodShopServiceimpl(dao);
-		List<FoodshopVO> list = service.showfoodshop("대낚식당");
+		List<FoodshopVO> list = service.showfoodshop(fname);
 		
 		request.setAttribute("showFoodShop", list); 
 		String view  = "/foodShop.jsp";
