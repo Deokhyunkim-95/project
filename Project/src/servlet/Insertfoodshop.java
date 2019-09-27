@@ -68,12 +68,13 @@ public class Insertfoodshop extends HttpServlet {
         
         try {
         	service.addFoodshop(vo);
-        	out.println("<script>alert('등록이 완료 됬습니다.'); location.href='main.html';</script>");
+        	out.println("<script>alert('등록이 완료 됬습니다.'); location.href='main.jsp';</script>");
         	out.flush();
+//        	response.sendRedirect("Showfoodshop.do");
 //        	response.sendRedirect("main.html");
 //        	System.out.println("등록이 완료");
 		} catch (Exception e) {
-			out.println("<script>alert('등록에  실패 했습니다.'); location.href='main.html';</script>");
+			out.println("<script>alert('등록에  실패 했습니다.'); location.href='main.jsp';</script>");
 			// TODO: handle exception
 		}
         

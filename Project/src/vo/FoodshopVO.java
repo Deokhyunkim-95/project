@@ -15,10 +15,13 @@ public class FoodshopVO {
 	String octime;
 	String tel;
 	
-	public FoodshopVO() {	}
 	
+	public FoodshopVO() {	}
+
+
 	public FoodshopVO(int fid, String fname, String address, String latitude, String longitude, String foodstyle,
 			String image, String loc, int discount, String holiday, String octime, String tel) {
+		super();
 		this.fid = fid;
 		this.fname = fname;
 		this.address = address;
@@ -32,85 +35,127 @@ public class FoodshopVO {
 		this.octime = octime;
 		this.tel = tel;
 	}
+
+
 	public int getFid() {
 		return fid;
 	}
+
+
 	public void setFid(int fid) {
 		this.fid = fid;
 	}
+
+
 	public String getFname() {
 		return fname;
 	}
+
+
 	public void setFname(String fname) {
 		this.fname = fname;
 	}
+
+
 	public String getAddress() {
 		return address;
 	}
+
+
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
+
 	public String getLatitude() {
 		return latitude;
 	}
+
+
 	public void setLatitude(String latitude) {
 		this.latitude = latitude;
 	}
+
+
 	public String getLongitude() {
 		return longitude;
 	}
+
+
 	public void setLongitude(String longitude) {
 		this.longitude = longitude;
 	}
+
+
 	public String getFoodstyle() {
 		return foodstyle;
 	}
+
+
 	public void setFoodstyle(String foodstyle) {
 		this.foodstyle = foodstyle;
 	}
+
+
 	public String getImage() {
 		return image;
 	}
+
+
 	public void setImage(String image) {
 		this.image = image;
 	}
+
+
 	public String getLoc() {
 		return loc;
 	}
+
+
 	public void setLoc(String loc) {
 		this.loc = loc;
 	}
+
+
 	public int getDiscount() {
 		return discount;
 	}
+
+
 	public void setDiscount(int discount) {
 		this.discount = discount;
 	}
+
+
 	public String getHoliday() {
 		return holiday;
 	}
+
+
 	public void setHoliday(String holiday) {
 		this.holiday = holiday;
 	}
+
+
 	public String getOctime() {
 		return octime;
 	}
+
+
 	public void setOctime(String octime) {
 		this.octime = octime;
 	}
+
+
 	public String getTel() {
 		return tel;
 	}
+
+
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
 
-	@Override
-	public String toString() {
-		return "FoodshopVO [fid=" + fid + ", fname=" + fname + ", address=" + address + ", latitude=" + latitude
-				+ ", longitude=" + longitude + ", foodstyle=" + foodstyle + ", image=" + image + ", loc=" + loc
-				+ ", discount=" + discount + ", holiday=" + holiday + ", octime=" + octime + ", tel=" + tel + "]";
-	}
 
 	@Override
 	public int hashCode() {
@@ -130,6 +175,7 @@ public class FoodshopVO {
 		result = prime * result + ((tel == null) ? 0 : tel.hashCode());
 		return result;
 	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -196,10 +242,13 @@ public class FoodshopVO {
 			return false;
 		return true;
 	}
-	
-	
-	
-	
-	
+
+
+	@Override
+	public String toString() {
+		return "FoodshopVO [fid=" + fid + ", fname=" + fname + ", address=" + address + ", latitude=" + latitude
+				+ ", longitude=" + longitude + ", foodstyle=" + foodstyle + ", image=" + image + ", loc=" + loc
+				+ ", discount=" + discount + ", holiday=" + holiday + ", octime=" + octime + ", tel=" + tel + "]";
+	}
 	
 }

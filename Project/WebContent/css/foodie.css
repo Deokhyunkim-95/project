@@ -1,27 +1,50 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Nanum+Gothic&display=swap');
+
 
 body {
-	font-size: small;
-	background-image: url("../img/cat.png");
 	background-size: 100px;
 	background-attachment: local;
 	background-position: right top;
 	background-repeat: no-repeat;
 }
 
+fieldset{
+	
+	padding: 5px;
+	
+}
+
+legend{
+	font-size: 20pt;
+	color: orange;
+}
+
+#email{
+	font-size: 15pt;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	color: orange;
+}
 
 #myNavbar ul{
+	background-position: top;
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
 	background-color: #333;
+	height: 80px;
+	width: 100%;
+	position: fixed;
+	z-index: 3;	
 	
 }
 
 #myNavbar ul li{
-	float: right;
+	float: left;
 	list-style-type: none;
+	
 }
 
 #myNavbar li a, #dropmenu{
@@ -30,6 +53,9 @@ body {
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
+	font-size: 25pt;
+	
+	
 }
 
 #myNavbar li a:hover, .dropdown:hover #dropmenu{
@@ -47,7 +73,6 @@ li.dropdown{
   background-color: gray;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
 }
 
 .drop_btn{
@@ -58,283 +83,78 @@ li.dropdown{
   text-align: left;	
 }
 
-.dropdown-content a:hover {
-	background-color: red;
-	}
 
 .dropdown:hover .dropdown-content {
   display: block;
+  position: fixed;
 }
 
-
-
-
-#bookmark_outline{
-	margin: 0 auto;
-	width: 80%;
-	text-align: center;
-}
-
-#bookmark{
-	font-size: 1.5em;
-	margin-left: 30px;
-}
-
-#greenBox {
-	width: 40%;
-	height: 10px;
-	margin: 0 auto;
-	background-color: darkseagreen;
-	box-shadow: 5px 5px 1px gray;
-}
-
-.title {
-	text-align: center;
-	font-weight: bold;
-	font-size: 2.2em;
-}
-
-#killtime{
-	font-style: italic;
-	text-align: center;
-	font-weight: bold;
-	font-size: 3.2em;
-	
-}
 
 
 
 #myNavbar a {
 	font-weight: bold;
-}
-
-legend {
-	font-size: 1.5em;
-}
-
-caption {
-	font-size: 1.5em;
-	caption-side: inherit;
-}
-
-table {
-	margin: 0 auto;
-	text-align: center;
-	border-collapse: collapse;
-}
-
-
-.row:hover {
-	background-color: darkcyan;
-}
-
-tr, th, td {
-	width: 250px;
-	height: 100px;
-}
-
-th{
-	font-size: 1.2em;
-}
-
-li {
-	list-style-type: upper-roman;
-}
-
-iframe {
-	display: block;
-	margin: 0 auto;
-}
-
-.res {
-	font-size: 1.7em;
-	color: navy;
-}
-
-#top3{
-	font-size: 2.2em;
 	
 }
 
-.row{
-	font-size: 2.2em;
-	color: darkseagreen;
-}
 
-#res_info {
-	display: block;
-	margin: 0 auto;
-	text-align: center;
-	width: 700px;
-	height: 200px;
-}
 
 a{
 	text-decoration: none;
 }
 
-a:hover{
-	text-decoration: underline;
-}
 
-#jump {
-	text-decoration: none;
-}
-#jump:hover{
-	text-decoration: underline;	
-}
-#fun{
-	margin: 0 auto;
-	width: 80%;
-	text-align: center;
-	font-size: 1.5em;
-	
-}
-
-
-#avo {
-	display: block;
-	margin: 0 auto;
-	-webkit-transition: -webkit-transform 4s;
-}
-
-#avo:hover {
-	-webkit-transform: skew(70deg, 70deg);
-}
 
 .bold {
 	font-weight: bold;
 	color: cornflowerblue;
 }
 
-#search_input{
-	
-	/* background-color: #EFF5E6 ;*/
-}
-
-#search_btn, #login, #join{
-	margin: 10px;
-	background-color: #F9FADC;
-}
-
-#search_btn, #login, #join:hover{
-	border-style: 
-}
-
-
-#avo {
-	text-align: center;
-}
-
-#tip {
-	font-size: 1.5em;
-}
-
-
-.food_img {
-	width: 300px;
-	height: 300px;
-	padding: 10px;
-}
-
-.cat {
-	display: block;
-	margin: 0 auto;
-	width: 400px;
-	height: 400px;
-	opacity: 1.0;
-	transition: width 5s;
-}
-
-.cat:hover {
-	opacity: 0.9;
-	width: 600px;
-}
-
-#info {
-	width: 500px;
-}
-
-#veg {
-	display: block;
-	text-align: center;
-}
-
-.veg_img {
-	width: 350px;
-	height: 350px;
-}
-
-.motivation, #warning {
-	text-align: center;
-	color: black;
-	font-size: 1.5em;
-	margin-top: 0;
-	margin-bottom: 0;
+.w3-sidebar w3-bar-block w3-card{
+	padding: 0px;
 	
 }
-.textbox{
-	margin: 0 auto;
-	padding: 20px;
-	width: 65%;
-	background-color: #F6F7F5;
-	border-radius: 20px;
-}
-.border {
-	width: 400px;
-	font-size: 1.3em;
-	padding-top: 10px;
-	padding-left: 10px;
-	padding-bottom: 10px;
-	margin: 10px 0 10px 5px;
-}
-.error {
-	color: cornflowerblue;
-	font-weight: bold;
-}
 
-#bmi_intro{
-	width: 60%;
-	margin: 0 auto;
-	font-size: 1.2em;
-}
-
-
-#bmi, #numguess, #swipe, #dragdrop{
-	width: 60%;
-	margin: 0 auto;
-	font-size: 1.1em;
-}
-
-#shopping_cart{
-	margin: 0 auto;
-	width: 833px;
-	height: 170px;
-	border: 1px dotted red;
-}
-
-#bmi_result{
-	width: 100px;
-	height: 30px;
-	border: 1px solid black;
-}
-
-#bmi_category{
-	width: 99%;
-	height: 350px;
-	border: 1px solid black;
-	margin: 0 auto;
+#search{
+	margin-top: 8px;
 	padding: 5px;
 }
 
-#bmi_category_info{
-	color: #2873B4;
-	font-weight: bold;
+
+
+
+#search_btn{
+	margin: 10px;
+	width: 90px;
+	height: 35px;
+	border-radius: 20px;
+	background-color: orange;
+	color: white;
+	cursor: pointer;
+	font-size: 15pt;
 }
+
+
+#contact{
+	
+	height: 100px;
+	padding: 10px;
+}
+
+
+#bookmark{
+	
+	height: 150px;
+	padding: 5px;
+}
+
+
+/* footer */
+
 footer {
+	background-position: bottom;
 	clear: both;
 	width: 100%;
-	height: 16em;
 	line-height: 2em;
 	background-color: black;
 	color: white;
@@ -342,3 +162,8 @@ footer {
 	color: white;
 	padding: 2px;
 }
+.nav, footer{
+	font-family: 'Nanum Gothic', sans-serif;
+	
+}
+

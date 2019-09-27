@@ -116,27 +116,35 @@ public static String idCheck(String id) {
 	
 }
 
-	public String temp(String deptno) {
+	public static String jsonfoodshop(String fname) {
 		
-		String sql = " select * from dept where deptno = ?";
+		String sql = " select * from foodshop where fname = ?";
 		
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
+		Map<String, String> map = new HashMap<String, String>();
+		
 		
 		try {
 			con = JDBCUtil.getConnection();
 			ps = con.prepareStatement(sql);
-			ps.setString(1, deptno);
+			ps.setString(1, fname);
 			
 			rs = ps.executeQuery();
 			//결과값 핸들링
+			
+			while(rs.next()) {
+				map.put("latitude", rs.getString("latitude"));
+				map.put("longitude", rs.getString("longitude"));
+				map.put("fname", rs.getString("fname"));
+			}
 			
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
 			JDBCUtil.close(con, ps, rs);
 		}
-		return " ";
+		return JSONObject.toJSONString(map);
 	}
 }
