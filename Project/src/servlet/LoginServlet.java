@@ -39,53 +39,54 @@ public class LoginServlet extends HttpServlet {
 		
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		String name = request.getParameter("name");
-		String role = request.getParameter("role");
+		//String name = request.getParameter("name");
+		//String role = request.getParameter("role");
 
+		
+		if (id == null || pw == null || id.length() == 0 || pw.length() == 0) {
+			// response.sendRedirect("./login.jsp");
+			request.setAttribute("msg", "pw 정보를 다시 입력하세요.");
+			request.setAttribute("id", id);
+			request.getRequestDispatcher("login.jsp").forward(request, response);
+			return;
+		}
+		
+		
 		UserDao dao = new UserDao();
 		UserService service = new UserServiceImpl(dao);
 		UserVO vo = new UserVO();
 		
 		vo.setId(id);
 		vo.setPassword(pw);
-		vo.setName(name);
-		vo.setRole(role);
+		//vo.setName(name);
+		//vo.setRole(role);
 		
 		UserVO count = null;
-
 		count = service.login(vo);
 		
-		System.out.println("Servlet count "+count);
+		System.out.println("Servlet count  login =>  "+count);
 
-		System.out.println("/login.do");
-		System.out.println("servlet:" + count.getId() + "/" +count.getName()+"/"+count.getRole());
+		//System.out.println("/login.do");
+		//System.out.println("servlet:" + count.getId() + "/" +count.getName()+"/"+count.getRole());
 
-		if (id == null || pw == null || id.length() == 0 || pw.length() == 0) {
-			// response.sendRedirect("./login.jsp");
-			request.setAttribute("msg", "pw 정보를 다시 입력하세요.");
-			request.setAttribute("id", id);
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+		
 
-			return;
-
-		}
-
-		if (count !=null ) {
-			session.setAttribute("login", count.getName());
-			session.setAttribute("id", count.getId());
-			session.setAttribute("role", count.getRole());
-			out.println("<script>alert('로그인 완료 되었습니다.');opener.location.reload();window.close();</script>" );
-			
-//			request.getRequestDispatcher("main.jsp").forward(request, response);
-
-		} else {
+		if (count == null ) {
 			request.setAttribute("msg", "로그인 실패");
 			request.setAttribute("id", id);
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 
 			return;
-		}
+			
+			
+//			request.getRequestDispatcher("main.jsp").forward(request, response);
 
+		} 
+		session.setAttribute("login", count.getName());
+		session.setAttribute("id", count.getId());
+		session.setAttribute("role", count.getRole());
+		out.println("<script>alert('로그인 완료 되었습니다.');opener.location.reload();window.close();</script>" );
+		
 	}
 
 }

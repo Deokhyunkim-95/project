@@ -140,6 +140,8 @@ public class UserDao {
 					return data;
 				} else {
 					System.out.println("It does not match");
+					return null;
+					
 				}
 			}
 
