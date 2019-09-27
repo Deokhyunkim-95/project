@@ -1,0 +1,76 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Nanum+Gothic&display=swap');
+
+
+*{
+	font-family: 'Do Hyeon', sans-serif;
+}
+
+#main{
+}
+
+#header{
+	
+	height: 10%;
+	
+}
+
+#main_body{
+	margin-top: 60px;
+	height: 70%;
+	
+}
+
+
+#footer{
+	height: 20%;
+}
+
+
+#title_fname{
+	margin-top: 100px;
+	text-align: center;
+	font-size: 4em;
+}
+
+
+
+#list_fname{
+	width: 50%;
+	height:80%;
+	margin: 0 auto;
+	padding-top: 30px;
+	border: 1px solid red;
+}
+
+#fname_row{
+	text-align: center;
+	height: 900px;
+	
+}
+
+#fname_fname{
+	height: 100px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	font-size: 20pt;
+}
+
+#fname_foodstyle{
+	height: 100px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	font-size: 18pt;
+}
+
+#fname_loc{
+	height: 100px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	font-size: 18pt;
+}
+
+#fname_space{
+	height: 100px;
+	
+}
