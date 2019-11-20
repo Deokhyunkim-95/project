@@ -6,8 +6,8 @@
 <meta charset="UTF-8">
 <meta name = "viewport" content="width = device-width, initial-scale=1"> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClient=2qnrv3923b"></script>
-<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClient=2qnrv3923b&callback=CALLBACK_FUNCTION"></script>
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClient="></script>
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClient=&callback=CALLBACK_FUNCTION"></script>
 <title>map</title>
 <style type="text/css">
 	#map{
